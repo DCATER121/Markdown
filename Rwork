@@ -1,0 +1,34 @@
+---
+title: 'Module # 12 R Markdown'
+author: 'Blake Dubin'
+date: "4/2/23"
+output: html_document
+---
+
+### ***using rpareto by installing actuar***
+```{r}
+#Install actuar to run rpareto function later
+library(actuar)
+#Scale
+alpha <- 585544
+#Shape
+k <- 500
+#Use rpareto to create the vector "FSApops
+FSApops <- rpareto(51, alpha, k)
+#Create a Histogram of FSApops
+hist(FSApops,xlab = "FSApops",col = "green",border = "blue")
+#Print the Mean value of FSApops
+meanFSApops <- mean(FSApops)
+print(paste0("Mean of FSApops is...",meanFSApops))
+#Print the Standard Deviation Value of FSApops
+sdFSApops <- sd(FSApops)
+print(paste0("Standard Deviation of FSApops is...",sdFSApops))
+#Print the Max Value of FSApops
+maxFSApops <- max(FSApops)
+print(paste0("Maximum Value in FSApops is...", maxFSApops))
+#Print the Min Value of FSApops
+minFSApops <- min(FSApops)
+print(paste0("Minimum Value in FSApops is...", minFSApops))
+```
+### ***Analysis***
+#The rpareto function allows me to create a normal distribution of FSAPops. Utilizing the Alpha and k values that were given in this scenario I was able to create and analyze a histogram, printing sd, min, and max values for the histogram as requested. Using the Pareto Distribution also made the skewed data easier to read for general observation purposes
